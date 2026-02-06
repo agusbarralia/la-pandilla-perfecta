@@ -141,37 +141,37 @@ export const GALLERY = [
     id: 'grooming-1',
     title: 'Peluquería Premium',
     description: 'Corte profesional y baño',
-    image: 'https://images.unsplash.com/photo-1576867757603-62a394a7c70e?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=1',
   },
   {
     id: 'grooming-2',
     title: 'Lavado Canino',
     description: 'Servicio de baño completo',
-    image: 'https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=2',
   },
   {
     id: 'local-1',
     title: 'Nuestro Local',
     description: 'Espacio moderno y cómodo',
-    image: 'https://images.unsplash.com/photo-1560732489-ce8665e3fdb8?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=3',
   },
   {
     id: 'happy-dogs-1',
     title: 'Mascotas Felices',
     description: 'Clientes satisfechos',
-    image: 'https://images.unsplash.com/photo-1633722715463-d30628cfe330?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=4',
   },
   {
     id: 'products-1',
     title: 'Productos Premium',
     description: 'Alimentos de calidad',
-    image: 'https://images.unsplash.com/photo-1535241749838-299277b6305e?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=5',
   },
   {
     id: 'grooming-3',
     title: 'Finishing Touch',
     description: 'Detalle en cada corte',
-    image: 'https://images.unsplash.com/photo-1601758228658-3bbb62da4e6d?w=500&h=500&fit=crop',
+    image: 'https://picsum.photos/500/500?random=6',
   },
 ];
 
