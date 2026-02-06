@@ -6,6 +6,14 @@ import unikLogo from '../assets/images/brands/unik.png';
 import vitalcanLogo from '../assets/images/brands/vitalcan.png';
 import proPlanLogo from '../assets/images/brands/pro-plan.png';
 
+// Gallery images
+import galleryImage1 from '../assets/images/andrew-s-ouo1hbizWwo-unsplash.jpg';
+import galleryImage2 from '../assets/images/peter-plashkin-F3lBkL_y9KY-unsplash.jpg';
+import galleryImage3 from '../assets/images/benjamin-lehman-qwIeh5M8bF8-unsplash.jpg';
+import galleryImage4 from '../assets/images/j-balla-photography-cMtiWjiAvq4-unsplash.jpg';
+import galleryImage5 from '../assets/images/sam-moghadam-NVj9jZH_avA-unsplash.jpg';
+import galleryImage6 from '../assets/images/bonnie-kittle-MUcxe_wDurE-unsplash.jpg';
+
 export const SITE_CONFIG = {
   name: 'La Pandilla Perfecta',
   slogan: 'El espacio para tu peludo',
@@ -141,37 +149,37 @@ export const GALLERY = [
     id: 'grooming-1',
     title: 'Peluquería Premium',
     description: 'Corte profesional y baño',
-    image: 'https://images.unsplash.com/photo-1576867757603-62a394a7c70e?w=500&h=500&fit=crop',
+    image: galleryImage1,
   },
   {
     id: 'grooming-2',
     title: 'Lavado Canino',
     description: 'Servicio de baño completo',
-    image: 'https://images.unsplash.com/photo-1537526029173-3acf3b9c4dad?w=500&h=500&fit=crop',
+    image: galleryImage2,
   },
   {
     id: 'local-1',
     title: 'Nuestro Local',
     description: 'Espacio moderno y cómodo',
-    image: 'https://images.unsplash.com/photo-1587300411515-9ff226b1e53b?w=500&h=500&fit=crop',
+    image: galleryImage3,
   },
   {
     id: 'happy-dogs-1',
     title: 'Mascotas Felices',
     description: 'Clientes satisfechos',
-    image: 'https://images.unsplash.com/photo-1633722715463-d30628cfe330?w=500&h=500&fit=crop',
+    image: galleryImage4,
   },
   {
     id: 'products-1',
     title: 'Productos Premium',
     description: 'Alimentos de calidad',
-    image: 'https://images.unsplash.com/photo-1583511655857-d19db992cb74?w=500&h=500&fit=crop',
+    image: galleryImage5,
   },
   {
     id: 'grooming-3',
     title: 'Finishing Touch',
     description: 'Detalle en cada corte',
-    image: 'https://images.unsplash.com/photo-1601758228658-3bbb62da4e6d?w=500&h=500&fit=crop',
+    image: galleryImage6,
   },
 ];
 
