@@ -1,0 +1,60 @@
+{
+  "tasks": [
+    {
+      "id": "SEO-001",
+      "title": "Add SEO_CONFIG to config.ts",
+      "status": "done",
+      "dependencies": [],
+      "notes": "✅ Added SEO_CONFIG with siteUrl, defaultTitle, defaultDescription, ogImage, locale"
+    },
+    {
+      "id": "SEO-002",
+      "title": "Create StructuredData.astro component",
+      "status": "done",
+      "dependencies": ["SEO-001"],
+      "notes": "✅ Created JSON-LD component with PetStore schema"
+    },
+    {
+      "id": "SEO-003",
+      "title": "Update BaseLayout with Open Graph tags",
+      "status": "done",
+      "dependencies": ["SEO-001"],
+      "notes": "✅ Added 7 OG tags: type, url, title, description, image, locale, site_name"
+    },
+    {
+      "id": "SEO-004",
+      "title": "Update BaseLayout with Twitter Card tags",
+      "status": "done",
+      "dependencies": ["SEO-001"],
+      "notes": "✅ Added 5 Twitter tags: card, url, title, description, image"
+    },
+    {
+      "id": "SEO-005",
+      "title": "Add canonical URL and robots meta",
+      "status": "done",
+      "dependencies": ["SEO-001"],
+      "notes": "✅ Added canonical link and robots meta with index,follow"
+    },
+    {
+      "id": "SEO-006",
+      "title": "Integrate StructuredData component in BaseLayout",
+      "status": "done",
+      "dependencies": ["SEO-002"],
+      "notes": "✅ Component integrated in <head>"
+    },
+    {
+      "id": "SEO-007",
+      "title": "Create/copy OG image (1200x630)",
+      "status": "done",
+      "dependencies": [],
+      "notes": "✅ Copied hero-placeholder.jpg to public/og-image.jpg (215KB)"
+    },
+    {
+      "id": "SEO-008",
+      "title": "Test with validation tools",
+      "status": "pending",
+      "dependencies": ["SEO-003", "SEO-004", "SEO-006"],
+      "notes": "⏳ User action: Test with Facebook debugger, Schema validator after deployment"
+    }
+  ]
+}

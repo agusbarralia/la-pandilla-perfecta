@@ -3,6 +3,8 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
+import StructuredData from '../components/StructuredData.astro';
+import { SEO_CONFIG } from '../lib/config';
 
 interface Props {
   title?: string;
@@ -10,9 +12,12 @@ interface Props {
 }
 
 const {
-  title = 'La Pandilla Perfecta',
-  description = 'Pet shop - Productos, servicios y atención para tu mascota',
+  title = SEO_CONFIG.defaultTitle,
+  description = SEO_CONFIG.defaultDescription,
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, SEO_CONFIG.siteUrl);
+const ogImageURL = new URL(SEO_CONFIG.ogImage, SEO_CONFIG.siteUrl);
 ---
 
 <!doctype html>
@@ -20,9 +25,36 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content={SEO_CONFIG.type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content={SEO_CONFIG.locale} />
+    <meta property="og:site_name" content={SEO_CONFIG.siteName} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Structured Data -->
+    <StructuredData />
   </head>
   <body>
     <Header />

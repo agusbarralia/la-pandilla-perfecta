@@ -15,6 +15,17 @@ export const SITE_CONFIG = {
   defaultLanguage: 'es',
 };
 
+export const SEO_CONFIG = {
+  siteName: 'La Pandilla Perfecta',
+  siteUrl: SITE_CONFIG.url,
+  defaultTitle: 'La Pandilla Perfecta - Pet Shop en CABA',
+  defaultDescription:
+    '🐾 Pet shop en Buenos Aires. Alimento premium, peluquería y lavado canino. Yerbal 547, CABA. ¡Visitanos!',
+  ogImage: '/og-image.jpg', // 1200x630px image for social sharing
+  locale: 'es_AR',
+  type: 'website',
+};
+
 export const DESIGN_TOKENS = {
   colors: {
     primary: '#27917B', // Verde
