@@ -1,3 +1,11 @@
+// Brand logos
+import eukanubaLogo from '../assets/images/brands/eukanuba.png';
+import royalCaninLogo from '../assets/images/brands/royal-canin.png';
+import golocanLogo from '../assets/images/brands/golocan.png';
+import unikLogo from '../assets/images/brands/unik.png';
+import vitalcanLogo from '../assets/images/brands/vitalcan.png';
+import proPlanLogo from '../assets/images/brands/pro-plan.png';
+
 export const SITE_CONFIG = {
   name: 'La Pandilla Perfecta',
   slogan: 'El espacio para tu peludo',
@@ -82,31 +90,49 @@ export const BRANDS = [
   {
     id: 'eukanuba',
     name: 'Eukanuba',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: eukanubaLogo,
   },
   {
     id: 'royal-canin',
     name: 'Royal Canin',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: royalCaninLogo,
   },
   {
     id: 'golocan',
     name: 'Golocan',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: golocanLogo,
   },
   {
     id: 'unik',
     name: 'Unik',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: unikLogo,
   },
   {
     id: 'vitalcan',
     name: 'Vitalcan',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: vitalcanLogo,
   },
   {
     id: 'pro-plan',
     name: 'Pro Plan',
-    logo: null, // TODO: Add logo SVG/PNG
+    logo: proPlanLogo,
+  },
+];
+
+export const NAV_ITEMS = [
+  {
+    id: 'inicio',
+    label: 'Inicio',
+    href: '#',
+  },
+  {
+    id: 'servicios',
+    label: 'Servicios',
+    href: '#servicios',
+  },
+  {
+    id: 'marcas',
+    label: 'Marcas',
+    href: '#marcas',
   },
 ];

@@ -9,3 +9,19 @@
   --color-brand-primary: var(--color-primary);
   --color-brand-secondary: var(--color-secondary);
 }
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent header from overlapping content */
+body {
+  padding-top: 4rem; /* 64px - height of header on mobile */
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 5rem; /* 80px - height of header on desktop */
+  }
+}

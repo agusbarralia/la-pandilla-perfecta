@@ -1,0 +1,131 @@
+---
+import { SITE_CONFIG, CONTACT_INFO, NAV_ITEMS } from '../lib/config';
+---
+
+<footer class="bg-primary text-white" aria-label="Pie de página">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 py-12">
+    <!-- Main Footer Grid: 3 columns on desktop, stack on mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <!-- Brand Section -->
+      <div>
+        <h3 class="text-2xl font-bold mb-3 flex items-center gap-2">
+          <span>🐾</span>
+          <span>{SITE_CONFIG.name}</span>
+        </h3>
+        <p class="text-white/80 text-sm">{SITE_CONFIG.slogan}</p>
+        <p class="text-white/70 text-sm mt-2">{SITE_CONFIG.description}</p>
+      </div>
+
+      <!-- Navigation Section -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Navegación</h4>
+        <nav aria-label="Enlaces de navegación del footer">
+          <ul class="space-y-2">
+            {
+              NAV_ITEMS.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-white/80 hover:text-white hover:underline transition-colors duration-200 text-sm"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Contact Section -->
+      <div>
+        <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+        <address class="not-italic text-white/80 text-sm space-y-2">
+          <p>
+            <span class="inline-block mr-2">📞</span>
+            <a
+              href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`}
+              class="hover:text-white hover:underline transition-colors"
+            >
+              {CONTACT_INFO.phone}
+            </a>
+          </p>
+          <p>
+            <span class="inline-block mr-2">📧</span>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              class="hover:text-white hover:underline transition-colors"
+            >
+              {CONTACT_INFO.email}
+            </a>
+          </p>
+          <p>
+            <span class="inline-block mr-2">📍</span>
+            <span>
+              {CONTACT_INFO.address.street}, {CONTACT_INFO.address.city},{' '}
+              {CONTACT_INFO.address.province}
+            </span>
+          </p>
+        </address>
+
+        <!-- Hours -->
+        <div class="mt-4 text-white/80 text-sm space-y-1">
+          <p class="font-semibold text-white mb-2">🕐 Horarios</p>
+          <p>{CONTACT_INFO.hours.weekdays}</p>
+          <p>{CONTACT_INFO.hours.saturday}</p>
+          <p>{CONTACT_INFO.hours.sunday}</p>
+        </div>
+
+        <!-- Social Media Links (conditional) -->
+        {
+          (CONTACT_INFO.social.instagram || CONTACT_INFO.social.facebook) && (
+            <div class="mt-4">
+              <p class="font-semibold text-white mb-2 text-sm">Síguenos</p>
+              <div class="flex gap-4">
+                {CONTACT_INFO.social.instagram && (
+                  <a
+                    href={CONTACT_INFO.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white/80 hover:text-white transition-colors"
+                    aria-label="Instagram"
+                  >
+                    📱 Instagram
+                  </a>
+                )}
+                {CONTACT_INFO.social.facebook && (
+                  <a
+                    href={CONTACT_INFO.social.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white/80 hover:text-white transition-colors"
+                    aria-label="Facebook"
+                  >
+                    📘 Facebook
+                  </a>
+                )}
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Bar -->
+  <div class="border-t border-white/20">
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-4">
+      <p class="text-center text-white/70 text-sm">
+        © <span id="current-year"></span> {SITE_CONFIG.name}. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Set current year dynamically
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear().toString();
+  }
+</script>

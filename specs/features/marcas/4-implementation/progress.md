@@ -65,3 +65,30 @@ Completed: 2026-02-05
 - Placeholder badges styled to be visually consistent with site design
 - Grid automatically adjusts: 2 cols mobile → 3 cols desktop
 - Section has `id="marcas"` for future navigation anchor linking
+
+---
+
+## Update: Logos Integrated (2026-02-05)
+
+### Tasks Completed
+- [x] TASK-006: User provided 6 brand logo PNG files
+- [x] TASK-007: Imported logos in config.ts (eukanuba, royal-canin, golocan, unik, vitalcan, pro-plan)
+- [x] TASK-008: Updated BRANDS array to reference imported logos
+- [x] TASK-009: Updated Brands.astro to use Astro Image component with optimization
+- [x] TASK-010: Verified production build with logo optimization
+
+### Image Optimization Results
+Astro automatically optimized all logos to WebP format with 3 sizes (64px, 128px, 192px):
+- **Royal Canin**: 269kB → 99kB/6kB/4kB/1kB
+- **Vitalcan**: 133kB → 35kB/5kB/3kB/1kB
+- **Eukanuba**: 63kB → 15kB/4kB/2kB/1kB
+- **Golocan**: 33kB → 10kB/5kB/2kB/1kB
+- **Unik**: 19kB → 2kB/1kB/1kB/1kB
+- **Pro Plan**: 10kB → 3kB/3kB/2kB/1kB
+
+### Technical Details
+- Logos display with grayscale filter by default
+- Hover effect: grayscale → full color + opacity 70% → 100%
+- Responsive sizing: h-12 (mobile) → h-16 (desktop)
+- WebP format with quality 85 for optimal balance
+- Automatic srcset generation for responsive loading

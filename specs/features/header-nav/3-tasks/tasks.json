@@ -1,0 +1,129 @@
+{
+  "feature": "header-nav",
+  "stats": {
+    "total": 5,
+    "done": 0
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Add NAV_ITEMS to config.ts",
+      "description": "Add navigation items array to config.ts with id, label, and href for each section (Inicio, Servicios, Marcas).",
+      "status": "pending",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: NAV_ITEMS constant exported from config.ts",
+        "AC-2: Contains at least 3 nav items (Inicio, Servicios, Marcas)",
+        "AC-3: Each item has id, label, and href properties",
+        "GATE: TypeScript compiles without errors"
+      ],
+      "references": [
+        "TECH-DESIGN: Navigation config"
+      ]
+    },
+    {
+      "id": "TASK-002",
+      "title": "Create Header.astro component structure",
+      "description": "Create Header.astro with semantic HTML structure: fixed header, logo, desktop nav, mobile menu button, and mobile menu overlay.",
+      "status": "pending",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/components/Header.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Component uses semantic HTML (header, nav, ul, li)",
+        "AC-2: Logo/brand name visible (🐾 La Pandilla Perfecta)",
+        "AC-3: Desktop nav list (hidden on mobile)",
+        "AC-4: Mobile hamburger button (hidden on desktop)",
+        "AC-5: Mobile menu overlay structure",
+        "GATE: Component renders in build"
+      ],
+      "references": [
+        "TECH-DESIGN: Header.astro structure",
+        "FUNCTIONAL-SPEC: Desktop/Mobile views"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Style Header component (desktop + mobile)",
+      "description": "Apply Tailwind classes for fixed positioning, layout, colors, responsive breakpoints, and mobile menu slide-in animation.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "TASK-001",
+        "TASK-002"
+      ],
+      "files": [
+        "src/components/Header.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Header is fixed at top (fixed top-0 z-50)",
+        "AC-2: White background with shadow",
+        "AC-3: Logo and nav layout (flexbox, space-between)",
+        "AC-4: Desktop nav horizontal, mobile hamburger visible",
+        "AC-5: Mobile menu slides in from right with animation",
+        "AC-6: Hover states on links (primary green color)",
+        "GATE: Looks correct on mobile (375px) and desktop (1024px+)"
+      ],
+      "references": [
+        "TECH-DESIGN: Styling",
+        "FUNCTIONAL-SPEC: Expected Output"
+      ]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Add mobile menu JavaScript",
+      "description": "Add minimal client-side script to toggle mobile menu open/close and auto-close on link click or resize to desktop.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "TASK-003"
+      ],
+      "files": [
+        "src/components/Header.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Hamburger button opens mobile menu (adds class)",
+        "AC-2: Close button closes mobile menu (removes class)",
+        "AC-3: Clicking nav link closes menu and scrolls to section",
+        "AC-4: Resizing to desktop auto-closes menu",
+        "GATE: No console errors, menu toggles correctly"
+      ],
+      "references": [
+        "TECH-DESIGN: Mobile menu script",
+        "FUNCTIONAL-SPEC: Mobile navigation acceptance criteria"
+      ]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Integrate Header into BaseLayout and add smooth scroll",
+      "description": "Import Header in BaseLayout.astro and add CSS smooth scroll behavior to global.css.",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "TASK-004"
+      ],
+      "files": [
+        "src/layouts/BaseLayout.astro",
+        "src/styles/global.css"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Header appears at top of all pages",
+        "AC-2: Smooth scroll behavior enabled (scroll-behavior: smooth)",
+        "AC-3: Nav links scroll to correct sections",
+        "AC-4: Logo click scrolls to top",
+        "AC-5: Header does not overlap page content (add padding-top to body/main)",
+        "GATE: Build succeeds, all nav links work correctly"
+      ],
+      "references": [
+        "TECH-DESIGN: Smooth scroll decision",
+        "FUNCTIONAL-SPEC: Success metrics"
+      ]
+    }
+  ]
+}

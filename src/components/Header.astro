@@ -1,0 +1,143 @@
+---
+import { NAV_ITEMS, SITE_CONFIG } from '../lib/config';
+
+interface Props {
+  navItems?: typeof NAV_ITEMS;
+}
+
+const { navItems = NAV_ITEMS } = Astro.props;
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo / Brand Name -->
+      <a
+        href="#"
+        class="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 hover:text-primary transition-colors"
+        aria-label="Volver al inicio"
+      >
+        <span>🐾</span>
+        <span>{SITE_CONFIG.name}</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:block" aria-label="Navegación principal">
+        <ul class="flex items-center gap-8">
+          {
+            navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  class="text-gray-700 hover:text-primary font-medium transition-colors duration-200 relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-200"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-toggle"
+        class="md:hidden p-2 text-gray-700 hover:text-primary transition-colors"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <nav
+    id="mobile-menu"
+    class="fixed inset-y-0 right-0 w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    aria-label="Menú de navegación móvil"
+  >
+    <div class="flex flex-col h-full">
+      <!-- Close Button -->
+      <div class="flex justify-end p-4 border-b border-gray-200">
+        <button
+          id="mobile-menu-close"
+          class="p-2 text-gray-700 hover:text-primary transition-colors"
+          aria-label="Cerrar menú de navegación"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav Links -->
+      <ul class="flex flex-col gap-1 p-4">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="mobile-nav-link block px-4 py-3 text-gray-700 hover:text-primary hover:bg-primary/5 rounded-lg font-medium transition-all duration-200"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Backdrop -->
+  <div
+    id="mobile-menu-backdrop"
+    class="fixed inset-0 bg-black/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    aria-hidden="true"
+  >
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle functionality
+  const menuToggle = document.getElementById('mobile-menu-toggle');
+  const menuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function openMenu() {
+    mobileMenu?.classList.remove('translate-x-full');
+    backdrop?.classList.remove('opacity-0', 'pointer-events-none');
+    menuToggle?.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.add('translate-x-full');
+    backdrop?.classList.add('opacity-0', 'pointer-events-none');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+  }
+
+  // Open menu
+  menuToggle?.addEventListener('click', openMenu);
+
+  // Close menu
+  menuClose?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+
+  // Close menu when clicking nav link
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
+  });
+</script>

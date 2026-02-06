@@ -1,0 +1,83 @@
+{
+  "feature": "footer",
+  "stats": {
+    "total": 3,
+    "done": 0
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Create Footer.astro component with structure and styling",
+      "description": "Create Footer.astro with semantic HTML structure (footer, nav, address tags), 3-column responsive grid layout, and complete styling using Tailwind CSS. Include brand section, navigation links, contact info, social links, and copyright bar.",
+      "status": "pending",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/components/Footer.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Component uses semantic HTML (footer, nav, address)",
+        "AC-2: 3-column grid on desktop (md:grid-cols-3), stacked on mobile",
+        "AC-3: Brand section with logo and slogan",
+        "AC-4: Navigation links section (uses NAV_ITEMS from config)",
+        "AC-5: Contact info section with phone, email, address, hours",
+        "AC-6: Social media links (conditional rendering)",
+        "AC-7: Copyright bar at bottom with dynamic year placeholder",
+        "AC-8: Primary green background with white text",
+        "AC-9: Proper spacing and responsive design",
+        "GATE: Component renders in build"
+      ],
+      "references": [
+        "TECH-DESIGN: Footer.astro structure",
+        "FUNCTIONAL-SPEC: Desktop/Mobile views"
+      ]
+    },
+    {
+      "id": "TASK-002",
+      "title": "Add dynamic year script",
+      "description": "Add client-side JavaScript to Footer.astro to dynamically set current year in copyright notice.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "TASK-001"
+      ],
+      "files": [
+        "src/components/Footer.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Script sets current year using new Date().getFullYear()",
+        "AC-2: Year element has id='current-year'",
+        "AC-3: Copyright displays correct year (2026)",
+        "GATE: No console errors, year displays correctly"
+      ],
+      "references": [
+        "TECH-DESIGN: Dynamic year script"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Integrate Footer into BaseLayout",
+      "description": "Import Footer component in BaseLayout.astro and render it after the slot (at the bottom of the page).",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "TASK-002"
+      ],
+      "files": [
+        "src/layouts/BaseLayout.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Footer imported from ../components/Footer.astro",
+        "AC-2: Footer rendered after slot in body",
+        "AC-3: Footer appears at bottom of all pages",
+        "AC-4: All navigation links work (smooth scroll)",
+        "AC-5: Social links open in new tabs (when URLs exist)",
+        "GATE: Build succeeds, footer renders correctly"
+      ],
+      "references": [
+        "TECH-DESIGN: Integration",
+        "FUNCTIONAL-SPEC: Success metrics"
+      ]
+    }
+  ]
+}
