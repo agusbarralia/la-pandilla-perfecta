@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-primary: #27917b;
+  --color-secondary: #957659;
+
+  /* Extend Tailwind's default colors */
+  --color-brand-primary: var(--color-primary);
+  --color-brand-secondary: var(--color-secondary);
+}

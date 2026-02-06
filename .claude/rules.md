@@ -29,7 +29,7 @@
 
 Secciones planificadas para la landing:
 
-1. **Hero** - Imagen principal, nombre del negocio, tagline
+1. **Hero** - Imagen principal, nombre del negocio ("La Pandilla Perfecta"), slogan ("El espacio para tu peludo")
 2. **Servicios** - Lista de servicios ofrecidos (venta, peluquería, lavado, etc.)
 3. **Marcas** - Marcas de alimento/productos con las que trabajan
 4. **Ubicación** - Dirección, mapa embebido (Google Maps)
@@ -41,10 +41,20 @@ Secciones planificadas para la landing:
 
 ## Design Rules
 
-- **Branding:** Pendiente (colores, tipografía, logo)
+### Branding
+- **Nombre:** La Pandilla Perfecta
+- **Slogan:** "El espacio para tu peludo"
+- **Paleta de colores:**
+  - Primary (verde): `#27917B`
+  - Secondary (beige): `#957659`
+  - Neutral (blanco): `#FFFFFF`
+- **Tipografía:** Por definir (usar system fonts por ahora)
+- **Logo:** Por definir
+
+### Technical
 - **Responsive:** Mobile-first obligatorio
 - **Performance:** Lighthouse score > 90 en todas las categorías
-- **Accessibility:** Semantic HTML, alt text en imágenes, contraste adecuado
+- **Accessibility:** Semantic HTML, alt text en imágenes, contraste adecuado (verificar con colores definidos)
 - **SEO:** Meta tags, Open Graph, structured data para negocio local
 
 ---
