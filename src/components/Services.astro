@@ -1,6 +1,22 @@
 ---
 import ServiceCard from './ServiceCard.astro';
+import IconFood from './icons/IconFood.astro';
+import IconScissors from './icons/IconScissors.astro';
+import IconWash from './icons/IconWash.astro';
+import IconToy from './icons/IconToy.astro';
+import IconBottle from './icons/IconBottle.astro';
+import IconChat from './icons/IconChat.astro';
 import { SERVICES } from '../lib/config';
+
+// Map service IDs to icon components
+const iconMap = {
+  alimentos: IconFood,
+  peluqueria: IconScissors,
+  lavado: IconWash,
+  accesorios: IconToy,
+  higiene: IconBottle,
+  asesoria: IconChat,
+};
 
 interface Props {
   title?: string;
@@ -24,9 +40,14 @@ const {
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {
-        SERVICES.map((service) => (
-          <ServiceCard icon={service.icon} title={service.title} description={service.description} />
-        ))
+        SERVICES.map((service) => {
+          const IconComponent = iconMap[service.id as keyof typeof iconMap];
+          return (
+            <ServiceCard title={service.title} description={service.description}>
+              <IconComponent slot="icon" class="w-12 h-12 text-accent" />
+            </ServiceCard>
+          );
+        })
       }
     </div>
   </div>
