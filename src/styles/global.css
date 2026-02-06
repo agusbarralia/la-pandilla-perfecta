@@ -1,14 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand Colors */
-  --color-primary: #27917b;
-  --color-primary-dark: #1f7162;
-  --color-secondary: #957659;
+  /* Brand Colors - Updated for better contrast & distinction */
+  --color-primary: #1f7162;
+  --color-primary-light: #27917b;
+  --color-primary-dark: #165447;
+  --color-secondary: #8b6f47;
+  --color-secondary-light: #957659;
+
+  /* Accent Color - Warm orange for CTAs */
+  --color-accent: #e67e22;
+  --color-accent-dark: #d35400;
+
+  /* Surfaces */
+  --color-surface: #fafafa;
+  --color-surface-secondary: #f5f5f5;
 
   /* Extend Tailwind's default colors */
   --color-brand-primary: var(--color-primary);
   --color-brand-secondary: var(--color-secondary);
+  --color-brand-accent: var(--color-accent);
 }
 
 /* Smooth scroll behavior */
@@ -52,4 +63,51 @@ body {
 
 .btn-primary:active {
   transform: translateY(0);
+}
+
+/* Accent button (for CTAs) */
+.btn-accent {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--color-accent);
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(230, 126, 34, 0.2);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-dark);
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(230, 126, 34, 0.3);
+}
+
+.btn-accent:active {
+  transform: scale(0.98);
+}
+
+/* Secondary button (outline) */
+.btn-secondary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
 }

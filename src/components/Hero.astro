@@ -1,26 +1,17 @@
 ---
 import { Image } from 'astro:assets';
-import { SITE_CONFIG } from '../lib/config';
 import heroImage from '../assets/images/hero-placeholder.jpg';
 
 interface Props {
-  title?: string;
-  slogan?: string;
-  ctaText?: string;
-  ctaLink?: string;
   imageAlt?: string;
 }
 
 const {
-  title = SITE_CONFIG.name,
-  slogan = SITE_CONFIG.slogan,
-  ctaText = 'Contactanos',
-  ctaLink = '#contacto',
   imageAlt = 'Perros felices en La Pandilla Perfecta',
 } = Astro.props;
 ---
 
-<section class="relative min-h-screen md:h-[80vh] w-full overflow-hidden" aria-label="Hero section">
+<section class="relative h-[60vh] md:h-[70vh] w-full overflow-hidden" aria-label="Hero section">
   <!-- Background Image -->
   <Image
     src={heroImage}
@@ -33,29 +24,44 @@ const {
     loading="eager"
   />
 
-  <!-- Overlay Gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/50 to-primary/70"></div>
+  <!-- Overlay Gradient - Stronger for better text contrast -->
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/85 via-primary/75 to-primary-dark/85"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 flex items-center justify-center min-h-screen md:h-[80vh] px-4 md:px-8 lg:px-12">
-    <div class="text-center text-white max-w-4xl mx-auto">
-      <!-- Title -->
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">
-        🐾 {title}
-      </h1>
-
-      <!-- Slogan -->
-      <p class="text-lg md:text-xl lg:text-2xl mb-8 md:mb-10 font-light">
-        {slogan}
+  <!-- Content - Left-aligned for F-pattern -->
+  <div class="relative z-10 flex items-center h-[60vh] md:h-[70vh] px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
+    <div class="text-white max-w-2xl">
+      <!-- Location/Category Label -->
+      <p class="text-lg md:text-xl font-semibold mb-3 text-secondary-light tracking-wide">
+        PET SHOP EN CABA
       </p>
 
-      <!-- CTA Button -->
-      <a
-        href={ctaLink}
-        class="inline-block px-8 py-3 md:px-10 md:py-4 bg-white text-primary font-semibold text-base md:text-lg rounded-lg shadow-lg hover:bg-white/90 hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-primary"
-      >
-        {ctaText}
-      </a>
+      <!-- Title -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
+        Todo para tu<br />mejor amigo
+      </h1>
+
+      <!-- Value Proposition -->
+      <p class="text-xl md:text-2xl mb-10 font-light leading-relaxed max-w-xl opacity-95">
+        Alimento premium, peluquería profesional<br />y asesoramiento personalizado
+      </p>
+
+      <!-- CTA Buttons - Hierarchical -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href="#servicios"
+          class="btn-accent text-center"
+        >
+          Ver Servicios
+        </a>
+        <a
+          href="https://wa.me/5491234567890?text=Hola%20La%20Pandilla%20Perfecta%2C%20quisiera%20consultar%20por%20los%20servicios"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary text-center"
+        >
+          Consultar por WhatsApp
+        </a>
+      </div>
     </div>
   </div>
 </section>

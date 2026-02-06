@@ -11,18 +11,17 @@ const { navItems = NAV_ITEMS } = Astro.props;
 <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 md:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
-      <!-- Logo / Brand Name -->
+      <!-- Logo / Brand Name - Left aligned -->
       <a
         href="#"
-        class="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 hover:text-primary transition-colors"
+        class="flex items-center gap-2 text-xl md:text-2xl font-bold text-gray-900 hover:text-primary transition-colors flex-shrink-0"
         aria-label="Volver al inicio"
       >
-        <span>🐾</span>
         <span>{SITE_CONFIG.name}</span>
       </a>
 
-      <!-- Desktop Navigation -->
-      <nav class="hidden md:block" aria-label="Navegación principal">
+      <!-- Desktop Navigation - Right aligned -->
+      <nav class="hidden md:block ml-auto" aria-label="Navegación principal">
         <ul class="flex items-center gap-8">
           {
             navItems.map((item) => (

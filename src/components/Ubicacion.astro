@@ -11,7 +11,7 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(CONTAC
     <!-- Section Title -->
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        🐾 Visitanos
+        Visitanos
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         Te esperamos en nuestro local para brindarte la mejor atención a vos y tu mascota
@@ -23,9 +23,8 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(CONTAC
       <!-- Left: Text Content -->
       <div class="flex flex-col justify-center space-y-6">
         <div>
-          <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
-            <span class="text-2xl">📍</span>
-            <span>Nuestra Ubicación</span>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">
+            Nuestra Ubicación
           </h3>
           <address class="not-italic text-gray-700 space-y-2">
             <p class="text-lg font-medium">{CONTACT_INFO.address.street}</p>
@@ -35,9 +34,8 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(CONTAC
         </div>
 
         <div>
-          <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-            <span class="text-xl">🕐</span>
-            <span>Horarios de Atención</span>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">
+            Horarios de Atención
           </h4>
           <div class="text-gray-700 space-y-1">
             <p>{CONTACT_INFO.hours.weekdays}</p>
@@ -51,11 +49,10 @@ const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(CONTAC
             href={mapsSearchUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary inline-flex items-center gap-2"
+            class="btn-primary"
             aria-label="Abrir ubicación en Google Maps"
           >
-            <span>🗺️</span>
-            <span>Cómo llegar</span>
+            Cómo llegar
           </a>
         </div>
       </div>

@@ -20,7 +20,7 @@ export const SEO_CONFIG = {
   siteUrl: SITE_CONFIG.url,
   defaultTitle: 'La Pandilla Perfecta - Pet Shop en CABA',
   defaultDescription:
-    '🐾 Pet shop en Buenos Aires. Alimento premium, peluquería y lavado canino. Yerbal 547, CABA. ¡Visitanos!',
+    'Pet shop en Buenos Aires. Alimento premium, peluquería y lavado canino. Yerbal 547, CABA. ¡Visitanos!',
   ogImage: '/og-image.jpg', // 1200x630px image for social sharing
   locale: 'es_AR',
   type: 'website',
@@ -28,8 +28,11 @@ export const SEO_CONFIG = {
 
 export const DESIGN_TOKENS = {
   colors: {
-    primary: '#27917B', // Verde
-    secondary: '#957659', // Beige
+    primary: '#1f7162', // Verde oscuro (mejor contraste)
+    primaryLight: '#27917b', // Verde original
+    secondary: '#8b6f47', // Beige oscuro
+    secondaryLight: '#957659', // Beige original
+    accent: '#e67e22', // Orange para CTAs
     white: '#FFFFFF',
   },
 };
@@ -61,40 +64,40 @@ export const CONTACT_INFO = {
 export const SERVICES = [
   {
     id: 'alimentos',
-    icon: '🍖',
+    icon: null,
     title: 'Venta de Alimentos',
     description:
       'Alimento balanceado de las mejores marcas para perros y gatos de todas las edades',
   },
   {
     id: 'peluqueria',
-    icon: '✂️',
+    icon: null,
     title: 'Peluquería Canina',
     description:
       'Cortes de pelo, baños medicinales y estéticos para que tu mascota luzca espectacular',
   },
   {
     id: 'lavado',
-    icon: '🛁',
+    icon: null,
     title: 'Lavado y Baño',
     description: 'Servicio de baño completo con productos de calidad y secado profesional',
   },
   {
     id: 'accesorios',
-    icon: '🎾',
+    icon: null,
     title: 'Accesorios',
     description:
       'Collares, correas, juguetes, camas y todo lo necesario para el bienestar de tu mascota',
   },
   {
     id: 'higiene',
-    icon: '🧴',
+    icon: null,
     title: 'Productos de Higiene',
     description: 'Shampoos, antipulgas, desparasitarios y productos para el cuidado diario',
   },
   {
     id: 'asesoria',
-    icon: '💬',
+    icon: null,
     title: 'Asesoramiento',
     description: 'Consultas sobre alimentación, cuidados y bienestar de tu mascota',
   },
