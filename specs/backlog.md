@@ -25,7 +25,8 @@ Central list of pending work. Priorities: **P0** (critical/MVP), **P1** (importa
 
 - [ ] **Sobre nosotros** - Sección con historia/info del pet shop
 - [ ] **Galería** - Fotos del local, mascotas, trabajos de peluquería
-- [ ] **Animaciones/transiciones** - Scroll animations, hover effects, micro-interactions
+- [x] **Animaciones/transiciones** - Scroll animations, hover effects, micro-interactions ✅
+- [ ] **Social proof** - Galería + testimonios de clientes
 - [ ] **Analytics** - Integrar Google Analytics o similar
 - [ ] **Performance optimization** - Lazy loading de imágenes, optimización de assets
 
@@ -44,6 +45,22 @@ Central list of pending work. Priorities: **P0** (critical/MVP), **P1** (importa
 ## Bugs
 
 _(none recorded)_
+
+---
+
+## Design Improvements Applied
+
+### 2026-02-06: Critical Design Audit & Refinements
+- ✅ Navigation restructured (left-aligned logo, right-aligned nav)
+- ✅ Removed emoji overuse (replaced with professional design)
+- ✅ Color palette updated for better contrast (primary: #1f7162 - WCAG AA)
+- ✅ Added accent color (#e67e22) for CTAs
+- ✅ Hero section redesigned (left-aligned, stronger value prop, dual CTAs)
+- ✅ Service icons added (6 custom SVG icons)
+- ✅ Logo integrated in header
+- ✅ Typography improved (Space Grotesk headings, Poppins body)
+- ✅ Scroll animations implemented (fade-in-up with stagger)
+- ✅ Service card heights normalized (consistent sizing)
 
 ---
 
