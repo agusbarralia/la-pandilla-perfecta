@@ -15,8 +15,13 @@
 
 | Decision | Choice | Rationale | Date |
 |----------|--------|-----------|------|
-| Tech stack | **Pendiente** | Definir antes de primera feature | - |
-| Lenguaje contenido | Español (AR) | Negocio local argentino | 2026-02-05 |
+| Framework | **Astro** | Static landing, zero JS by default, excellent SEO, perfect for content-focused sites | 2026-02-05 |
+| Styling | **Tailwind CSS** | Rapid development, utility-first, excellent DX, easy responsive design | 2026-02-05 |
+| Language | **TypeScript** | Type safety, better DX, catches bugs early | 2026-02-05 |
+| Hosting | **Netlify/Vercel** | Free tier, CDN, auto-deploy from git, perfect for static sites | 2026-02-05 |
+| Package Manager | **npm** | Standard, comes with Node, simple | 2026-02-05 |
+| Repo strategy | **Separate repos** | Landing (this repo) + Booking app (future Next.js repo). Separation of concerns, independent deploys | 2026-02-05 |
+| Lenguaje contenido | **Español (AR)** | Negocio local argentino | 2026-02-05 |
 
 ---
 
@@ -84,4 +89,31 @@ _(none yet)_
 
 ## Decisions Log
 
-_(decisions will be logged here as they are made)_
+### 2026-02-05: Tech Stack & Architecture
+
+**Decision:** Use Astro + Tailwind for static landing, separate repo for future booking app
+
+**Context:**
+- Current need: Simple informational landing page
+- Future need: Booking system with backend/DB/auth
+- Client wants easy maintenance
+
+**Options considered:**
+1. **Full Next.js now** - Overkill for static content, heavier bundle, more complex
+2. **Plain HTML/CSS/JS** - Too basic, harder to scale, no framework benefits
+3. **Astro (chosen)** - Perfect middle ground, static output, expandable
+
+**Rationale:**
+- Astro generates pure HTML (fast, SEO-friendly, no hydration overhead)
+- Tailwind enables rapid UI development
+- TypeScript catches errors early
+- Free hosting on Netlify/Vercel with CDN
+- When booking system is needed, create separate Next.js repo and link from CTA
+- Two repos = separation of concerns, independent deploys, right tool for each job
+
+**Consequences:**
+- ✅ Blazing fast landing page
+- ✅ Free hosting forever
+- ✅ Easy for client to maintain
+- ✅ Clear upgrade path (link to booking app when ready)
+- ⚠️ Two repos to manage (but cleaner architecture)

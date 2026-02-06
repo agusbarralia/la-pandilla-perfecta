@@ -6,12 +6,26 @@ Landing page para pet shop "La Pandilla Perfecta". Sitio informativo con ubicaci
 
 ## Tech Stack
 
-- **Framework:** Por definir (Next.js / Astro / HTML+CSS+JS estático)
-- **Styling:** Por definir (Tailwind CSS recomendado)
-- **Hosting:** Por definir
-- **Language:** TypeScript / JavaScript
+- **Framework:** Astro (Static Site Generation)
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+- **Hosting:** Netlify / Vercel
+- **Package Manager:** npm
 
-> **Decisión pendiente:** Definir stack antes de comenzar la primera feature.
+### Rationale
+
+**Why Astro?**
+- Perfect for static content (landing page use case)
+- Exceptional performance (zero JS by default, static HTML output)
+- Excellent SEO (SSG out of the box)
+- Tailwind integration in 2 minutes
+- Easy maintenance & free hosting
+- Future-proof: when adding booking system, link to separate Next.js app
+
+**Future Architecture:**
+- **Repo 1 (this):** Static landing (Astro + Tailwind)
+- **Repo 2 (future):** Booking app (Next.js + backend + DB)
+- **Integration:** CTA button on landing → redirects to booking subdomain/domain
 
 ---
 

@@ -1,0 +1,180 @@
+{
+  "feature": "project-setup",
+  "stats": {
+    "total": 7,
+    "done": 7
+  },
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Initialize Astro project with TypeScript",
+      "description": "Run Astro CLI to scaffold project. Choose TypeScript strict mode. Install dependencies.",
+      "status": "done",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "package.json",
+        "astro.config.mjs",
+        "tsconfig.json"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Astro project scaffolded successfully",
+        "AC-2: TypeScript strict mode enabled",
+        "AC-3: Dependencies installed",
+        "GATE: npm install completes without errors"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-1",
+        "TECH-DESIGN-STEP-2"
+      ]
+    },
+    {
+      "id": "TASK-002",
+      "title": "Add Tailwind CSS integration",
+      "description": "Use Astro's official Tailwind integration. Configure Tailwind with default settings.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "TASK-001"
+      ],
+      "files": [
+        "astro.config.mjs",
+        "tailwind.config.mjs"
+      ],
+      "acceptance_criteria": [
+        "AC-2: Tailwind integration added via astro add",
+        "AC-2: tailwind.config.mjs created",
+        "GATE: Build includes Tailwind CSS"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-2",
+        "TECH-DESIGN-STEP-4"
+      ]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Configure ESLint and Prettier",
+      "description": "Set up ESLint with Astro plugin and Prettier for code formatting.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "TASK-001"
+      ],
+      "files": [
+        ".eslintrc.cjs",
+        ".prettierrc",
+        "package.json"
+      ],
+      "acceptance_criteria": [
+        "AC-5: ESLint configured with Astro plugin",
+        "AC-5: Prettier configured",
+        "GATE: npm run lint works"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-5",
+        "TECH-DESIGN-STEP-5"
+      ]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Create project directory structure",
+      "description": "Create src/ subdirectories: components/, layouts/, pages/, styles/, lib/. Set up public/ for static assets.",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "TASK-001"
+      ],
+      "files": [
+        "src/components/",
+        "src/layouts/",
+        "src/pages/",
+        "src/styles/",
+        "src/lib/",
+        "public/"
+      ],
+      "acceptance_criteria": [
+        "AC-6: Directory structure matches conventions",
+        "AC-6: All required folders exist",
+        "GATE: Directory structure verified"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-6",
+        "TECH-DESIGN-STEP-6"
+      ]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Create base layout and index page",
+      "description": "Create BaseLayout.astro with HTML boilerplate. Create index.astro as home page using BaseLayout.",
+      "status": "pending",
+      "layer": 4,
+      "depends_on": [
+        "TASK-002",
+        "TASK-004"
+      ],
+      "files": [
+        "src/layouts/BaseLayout.astro",
+        "src/pages/index.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-3: Dev server shows index page",
+        "AC-3: BaseLayout includes proper HTML structure",
+        "AC-2: Tailwind classes work on test element",
+        "GATE: npm run dev shows page on localhost:4321"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-3",
+        "TECH-DESIGN-STEP-7"
+      ]
+    },
+    {
+      "id": "TASK-006",
+      "title": "Add global styles and site config",
+      "description": "Create global.css for base styles. Create config.ts with site metadata (name, description, etc.).",
+      "status": "pending",
+      "layer": 4,
+      "depends_on": [
+        "TASK-004"
+      ],
+      "files": [
+        "src/styles/global.css",
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Global styles imported in BaseLayout",
+        "AC-1: Site config contains project metadata",
+        "GATE: Styles apply correctly"
+      ],
+      "references": [
+        "TECH-DESIGN-STEP-8"
+      ]
+    },
+    {
+      "id": "TASK-007",
+      "title": "Verify build and update documentation",
+      "description": "Run production build to verify everything works. Update README.md with setup and dev instructions.",
+      "status": "pending",
+      "layer": 5,
+      "depends_on": [
+        "TASK-002",
+        "TASK-003",
+        "TASK-005",
+        "TASK-006"
+      ],
+      "files": [
+        "README.md",
+        "dist/"
+      ],
+      "acceptance_criteria": [
+        "AC-4: npm run build succeeds",
+        "AC-4: dist/ contains static HTML/CSS/JS",
+        "AC-1: README.md has setup instructions",
+        "GATE: Production build generates valid output"
+      ],
+      "references": [
+        "FUNCTIONAL-AC-4",
+        "TECH-DESIGN-STEP-10"
+      ]
+    }
+  ]
+}
