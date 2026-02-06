@@ -141,37 +141,37 @@ export const GALLERY = [
     id: 'grooming-1',
     title: 'Peluquería Premium',
     description: 'Corte profesional y baño',
-    image: 'https://loremflickr.com/500/500/dog,grooming',
+    image: 'https://images.unsplash.com/photo-1576867757603-62a394a7c70e?w=500&h=500&fit=crop',
   },
   {
     id: 'grooming-2',
     title: 'Lavado Canino',
     description: 'Servicio de baño completo',
-    image: 'https://loremflickr.com/500/500/dog,bath',
+    image: 'https://images.unsplash.com/photo-1537526029173-3acf3b9c4dad?w=500&h=500&fit=crop',
   },
   {
     id: 'local-1',
     title: 'Nuestro Local',
     description: 'Espacio moderno y cómodo',
-    image: 'https://loremflickr.com/500/500/pet,shop',
+    image: 'https://images.unsplash.com/photo-1587300411515-9ff226b1e53b?w=500&h=500&fit=crop',
   },
   {
     id: 'happy-dogs-1',
     title: 'Mascotas Felices',
     description: 'Clientes satisfechos',
-    image: 'https://loremflickr.com/500/500/happy,dog',
+    image: 'https://images.unsplash.com/photo-1633722715463-d30628cfe330?w=500&h=500&fit=crop',
   },
   {
     id: 'products-1',
     title: 'Productos Premium',
     description: 'Alimentos de calidad',
-    image: 'https://loremflickr.com/500/500/dog,food',
+    image: 'https://images.unsplash.com/photo-1583511655857-d19db992cb74?w=500&h=500&fit=crop',
   },
   {
     id: 'grooming-3',
     title: 'Finishing Touch',
     description: 'Detalle en cada corte',
-    image: 'https://loremflickr.com/500/500/dog,hair',
+    image: 'https://images.unsplash.com/photo-1601758228658-3bbb62da4e6d?w=500&h=500&fit=crop',
   },
 ];
 
