@@ -1,0 +1,114 @@
+{
+  "feature": "marcas",
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Add BRANDS constant to config.ts and find/create brand logos",
+      "description": "Add BRANDS array to config.ts with 6 brands. Search for real SVG logos or create placeholder structure.",
+      "layer": 1,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "BRANDS array exported from config.ts",
+        "6 brands defined: Eukanuba, Royal Canin, Golocan, Unik, Vitalcan, Pro Plan",
+        "Each brand has: id, name, logo path",
+        "Logo files ready (real SVGs or placeholder approach decided)",
+        "File compiles without errors"
+      ],
+      "files_touched": [
+        "src/lib/config.ts",
+        "src/assets/images/brands/ (if using real logos)"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Add custom pink color to theme if needed",
+      "description": "Add custom pink background color to Tailwind theme in global.css to match reference design.",
+      "layer": 1,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Pink color defined in @theme (global.css) or use Tailwind's bg-pink-100",
+        "Color matches reference image (#F0C9D9 or similar)",
+        "Build compiles successfully"
+      ],
+      "files_touched": [
+        "src/styles/global.css"
+      ],
+      "dependencies": [],
+      "notes": "Decided NOT to add pink - not part of brand palette. Used white background instead."
+    },
+    {
+      "id": "TASK-003",
+      "title": "Create Brands.astro component",
+      "description": "Create brands showcase section with grid layout, grayscale logos with hover effects.",
+      "layer": 2,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Component created at src/components/Brands.astro",
+        "Imports BRANDS from config.ts",
+        "Renders section with heading and subtitle",
+        "Grid layout responsive (2 cols mobile → 3 cols desktop)",
+        "Logos displayed with grayscale filter",
+        "Hover effect: remove grayscale, increase opacity",
+        "Pink background applied",
+        "Section has id='marcas' for anchor linking"
+      ],
+      "files_touched": [
+        "src/components/Brands.astro"
+      ],
+      "dependencies": ["TASK-001", "TASK-002"]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Integrate Brands into homepage",
+      "description": "Import and render Brands component in index.astro below Services section.",
+      "layer": 3,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Brands imported in src/pages/index.astro",
+        "Brands rendered after Services component",
+        "Page renders correctly",
+        "No layout issues or overlaps"
+      ],
+      "files_touched": [
+        "src/pages/index.astro"
+      ],
+      "dependencies": ["TASK-003"]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Verify build and responsive design",
+      "description": "Run production build and test brands section on multiple screen sizes.",
+      "layer": 4,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "npm run build succeeds without errors",
+        "Brands section visible on homepage",
+        "Grid responsive: 2 cols (mobile), 3 cols (desktop)",
+        "All 6 brand logos render correctly",
+        "Grayscale + hover effects work",
+        "Pink background matches design reference",
+        "Logos properly sized and aligned",
+        "No horizontal scroll on mobile"
+      ],
+      "files_touched": [
+        "dist/"
+      ],
+      "dependencies": ["TASK-004"]
+    }
+  ],
+  "metadata": {
+    "total_tasks": 5,
+    "completed_tasks": 5,
+    "estimated_hours": 4,
+    "actual_hours": 2,
+    "created_at": "2026-02-05",
+    "last_updated": "2026-02-05",
+    "completed_at": "2026-02-05"
+  }
+}

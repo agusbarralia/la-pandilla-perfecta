@@ -1,0 +1,48 @@
+---
+import { BRANDS } from '../lib/config';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+}
+
+const {
+  title = 'Trabajamos con las mejores marcas',
+  subtitle = 'Alimento premium para el bienestar de tu mascota',
+} = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-white" id="marcas">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+      <p class="text-lg text-gray-600">{subtitle}</p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 items-center">
+      {
+        BRANDS.map((brand) => (
+          <div class="flex items-center justify-center">
+            {brand.logo ? (
+              <!-- Real logo (when available) -->
+              <img
+                src={brand.logo}
+                alt={`Logo de ${brand.name}`}
+                class="h-12 md:h-16 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              />
+            ) : (
+              <!-- Placeholder badge -->
+              <div class="bg-gray-100 border-2 border-gray-300 rounded-lg px-6 py-4 hover:border-primary hover:bg-primary/5 transition-all duration-300">
+                <p class="text-lg md:text-xl font-bold text-gray-800 text-center whitespace-nowrap">
+                  {brand.name}
+                </p>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

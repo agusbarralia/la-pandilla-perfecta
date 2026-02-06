@@ -77,3 +77,36 @@ export const SERVICES = [
     description: 'Consultas sobre alimentación, cuidados y bienestar de tu mascota',
   },
 ];
+
+export const BRANDS = [
+  {
+    id: 'eukanuba',
+    name: 'Eukanuba',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+  {
+    id: 'royal-canin',
+    name: 'Royal Canin',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+  {
+    id: 'golocan',
+    name: 'Golocan',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+  {
+    id: 'unik',
+    name: 'Unik',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+  {
+    id: 'vitalcan',
+    name: 'Vitalcan',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+  {
+    id: 'pro-plan',
+    name: 'Pro Plan',
+    logo: null, // TODO: Add logo SVG/PNG
+  },
+];
