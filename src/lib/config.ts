@@ -175,6 +175,33 @@ export const GALLERY = [
   },
 ];
 
+export const ABOUT_US = {
+  mission: 'En La Pandilla Perfecta creemos que cada mascota merece lo mejor. Nuestro compromiso es ofrecer productos premium y servicios profesionales para garantizar el bienestar y felicidad de tus peludos.',
+  vision: 'Ser el pet shop de referencia en CABA, reconocido por la calidad, profesionalismo y amor hacia los animales.',
+  whyChooseUs: [
+    {
+      id: 'experience',
+      title: 'Experiencia Profesional',
+      description: 'Equipo capacitado con años de experiencia en cuidado y grooming canino',
+    },
+    {
+      id: 'quality',
+      title: 'Productos Premium',
+      description: 'Marcas reconocidas y alimentos de la más alta calidad para la salud de tu mascota',
+    },
+    {
+      id: 'care',
+      title: 'Atención Personalizada',
+      description: 'Tratamos a cada mascota como parte de nuestra familia, con dedicación y cuidado especial',
+    },
+    {
+      id: 'location',
+      title: 'Ubicación Accesible',
+      description: 'Espacio moderno y cómodo ubicado en el centro de CABA para tu comodidad',
+    },
+  ],
+};
+
 export const NAV_ITEMS = [
   {
     id: 'inicio',
@@ -190,6 +217,11 @@ export const NAV_ITEMS = [
     id: 'galeria',
     label: 'Galería',
     href: '#galeria',
+  },
+  {
+    id: 'sobre-nosotros',
+    label: 'Sobre Nosotros',
+    href: '#sobre-nosotros',
   },
   {
     id: 'marcas',

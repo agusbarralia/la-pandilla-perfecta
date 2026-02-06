@@ -1,0 +1,60 @@
+---
+import { ABOUT_US } from '../lib/config';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Sobre Nosotros' } = Astro.props;
+---
+
+<section class="py-16 md:py-24 bg-gray-50" id="sobre-nosotros">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+      <p class="text-lg text-gray-600">Conoce nuestra historia y valores</p>
+    </div>
+
+    <!-- Mission & Vision -->
+    <div class="grid md:grid-cols-2 gap-12 mb-20">
+      <!-- Mission -->
+      <div data-animate class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-primary mb-4">Nuestra Misión</h3>
+        <p class="text-gray-700 leading-relaxed">
+          {ABOUT_US.mission}
+        </p>
+      </div>
+
+      <!-- Vision -->
+      <div data-animate class="bg-white rounded-lg p-8 shadow-sm hover:shadow-md transition-shadow">
+        <h3 class="text-2xl font-bold text-primary mb-4">Nuestra Visión</h3>
+        <p class="text-gray-700 leading-relaxed">
+          {ABOUT_US.vision}
+        </p>
+      </div>
+    </div>
+
+    <!-- Why Choose Us -->
+    <div>
+      <h3 class="text-2xl font-bold text-gray-900 text-center mb-12">¿Por Qué Elegirnos?</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        {
+          ABOUT_US.whyChooseUs.map((item) => (
+            <div
+              data-animate
+              class="bg-white rounded-lg p-6 shadow-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300 text-center"
+            >
+              <!-- Icon placeholder -->
+              <div class="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-lg mx-auto mb-4 flex items-center justify-center">
+                <div class="text-white font-bold text-lg">✓</div>
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">{item.title}</h4>
+              <p class="text-gray-600 text-sm">{item.description}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
