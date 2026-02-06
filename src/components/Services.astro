@@ -43,9 +43,11 @@ const {
         SERVICES.map((service) => {
           const IconComponent = iconMap[service.id as keyof typeof iconMap];
           return (
-            <ServiceCard title={service.title} description={service.description}>
-              <IconComponent slot="icon" class="w-12 h-12 text-accent" />
-            </ServiceCard>
+            <div data-animate>
+              <ServiceCard title={service.title} description={service.description}>
+                <IconComponent slot="icon" class="w-12 h-12 text-accent" />
+              </ServiceCard>
+            </div>
           );
         })
       }

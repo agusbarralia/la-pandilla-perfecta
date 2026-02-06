@@ -53,6 +53,14 @@ const ogImageURL = new URL(SEO_CONFIG.ogImage, SEO_CONFIG.siteUrl);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Structured Data -->
     <StructuredData />
   </head>
@@ -61,5 +69,27 @@ const ogImageURL = new URL(SEO_CONFIG.ogImage, SEO_CONFIG.siteUrl);
     <slot />
     <Footer />
     <WhatsAppButton />
+
+    <script>
+      // Scroll animation observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with data-animate attribute
+      document.querySelectorAll('[data-animate]').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
   </body>
 </html>
