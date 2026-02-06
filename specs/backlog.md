@@ -24,7 +24,7 @@ Central list of pending work. Priorities: **P0** (critical/MVP), **P1** (importa
 ### P1 (Important - Post-MVP)
 
 - [ ] **Sobre nosotros** - Sección con historia/info del pet shop
-- [ ] **Galería** - Fotos del local, mascotas, trabajos de peluquería
+- [x] **Galería** - Fotos del local, mascotas, trabajos de peluquería ✅
 - [x] **Animaciones/transiciones** - Scroll animations, hover effects, micro-interactions ✅
 - [ ] **Social proof** - Galería + testimonios de clientes
 - [ ] **Analytics** - Integrar Google Analytics o similar
@@ -61,6 +61,9 @@ _(none recorded)_
 - ✅ Typography improved (Space Grotesk headings, Poppins body)
 - ✅ Scroll animations implemented (fade-in-up with stagger)
 - ✅ Service card heights normalized (consistent sizing)
+- ✅ Gallery section added with pet-themed images (Loremflickr)
+- ✅ Body font changed from Inter to Poppins (more friendly)
+- ✅ Navigation menu updated with Galería link
 
 ---
 
