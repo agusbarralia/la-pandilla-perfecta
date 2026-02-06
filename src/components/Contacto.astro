@@ -18,7 +18,7 @@ const telUrl = `tel:+${CONTACT_INFO.phoneRaw}`;
     </div>
 
     <!-- Contact Methods Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
       <!-- Phone Card -->
       <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
         <div class="flex items-start gap-4">
@@ -66,6 +66,21 @@ const telUrl = `tel:+${CONTACT_INFO.phoneRaw}`;
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- WhatsApp CTA Button -->
+    <div class="text-center mb-12">
+      <a
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+      >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.732 5.404 2.124 7.723L3.6 20.4l8.187-2.148c2.256 1.226 4.797 1.874 7.465 1.874 5.428 0 9.884-4.418 9.884-9.846 0-2.632-.675-5.194-1.959-7.44a9.828 9.828 0 00-7.713-3.642m0-2.082C6.477.414 0 6.843 0 14.694c0 2.856.654 5.649 1.949 8.175L0 24l8.822-2.318c2.511 1.579 5.44 2.412 8.622 2.412 7.923 0 14.4-6.430 14.4-14.357 0-3.839-.934-7.467-2.711-10.634A14.375 14.375 0 0017.05 2.299" />
+        </svg>
+        Enviar Mensaje por WhatsApp
+      </a>
     </div>
 
     <!-- Social Media (if available) -->
