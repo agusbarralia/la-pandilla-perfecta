@@ -24,9 +24,11 @@ export const DESIGN_TOKENS = {
 };
 
 export const CONTACT_INFO = {
-  phone: '+54 9 11 XXXX-XXXX', // Update with real phone
-  email: 'info@lapandillaperfecta.com', // Update with real email
-  whatsapp: '+54 9 11 XXXX-XXXX', // Update with real WhatsApp
+  phone: '+54 11 5693-6377',
+  phoneRaw: '541156936377', // For tel: links and WhatsApp
+  email: 'info@lapandillaperfecta.com',
+  whatsapp: '541156936377',
+  whatsappMessage: 'Hola! Me gustaría consultar sobre...',
   address: {
     street: 'Yerbal 547',
     city: 'Ciudad Autónoma de Buenos Aires',
@@ -140,5 +142,10 @@ export const NAV_ITEMS = [
     id: 'ubicacion',
     label: 'Ubicación',
     href: '#ubicacion',
+  },
+  {
+    id: 'contacto',
+    label: 'Contacto',
+    href: '#contacto',
   },
 ];

@@ -1,0 +1,133 @@
+---
+import { CONTACT_INFO } from '../lib/config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent(CONTACT_INFO.whatsappMessage)}`;
+const telUrl = `tel:+${CONTACT_INFO.phoneRaw}`;
+---
+
+<section id="contacto" class="py-16 md:py-24 bg-secondary/10" aria-label="Contacto">
+  <div class="max-w-5xl mx-auto px-4 md:px-8">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        🐾 ¡Comunicate con Nosotros!
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        ¿Tenés alguna consulta? Estamos acá para ayudarte. Contactanos por el medio que prefieras.
+      </p>
+    </div>
+
+    <!-- Contact Methods Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <!-- Phone Card -->
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">📞</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Teléfono</h3>
+            <a
+              href={telUrl}
+              class="text-lg text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            >
+              {CONTACT_INFO.phone}
+            </a>
+            <p class="text-sm text-gray-600 mt-1">Llamanos directamente</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- WhatsApp Card -->
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">💬</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">WhatsApp</h3>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-lg text-[#25D366] hover:text-[#128C7E] font-medium hover:underline transition-colors"
+            >
+              {CONTACT_INFO.phone}
+            </a>
+            <p class="text-sm text-gray-600 mt-1">Escribinos por WhatsApp</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Card -->
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">📧</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Email</h3>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              class="text-lg text-primary hover:text-primary-dark font-medium hover:underline transition-colors break-all"
+            >
+              {CONTACT_INFO.email}
+            </a>
+            <p class="text-sm text-gray-600 mt-1">Envianos un correo</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hours Card -->
+      <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <div class="flex items-start gap-4">
+          <div class="text-4xl">🕐</div>
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Horarios</h3>
+            <div class="text-gray-700 space-y-1">
+              <p class="text-sm">{CONTACT_INFO.hours.weekdays}</p>
+              <p class="text-sm">{CONTACT_INFO.hours.saturday}</p>
+              <p class="text-sm text-gray-500">{CONTACT_INFO.hours.sunday}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media (if available) -->
+    {
+      (CONTACT_INFO.social.instagram || CONTACT_INFO.social.facebook) && (
+        <div class="bg-white rounded-xl p-8 shadow-md text-center">
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Seguinos en Redes</h3>
+          <div class="flex justify-center gap-6">
+            {CONTACT_INFO.social.instagram && (
+              <a
+                href={CONTACT_INFO.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                aria-label="Instagram"
+              >
+                <span class="text-2xl">📷</span>
+                <span>Instagram</span>
+              </a>
+            )}
+            {CONTACT_INFO.social.facebook && (
+              <a
+                href={CONTACT_INFO.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white font-semibold rounded-lg hover:shadow-lg transition-all hover:scale-105"
+                aria-label="Facebook"
+              >
+                <span class="text-2xl">📘</span>
+                <span>Facebook</span>
+              </a>
+            )}
+          </div>
+        </div>
+      )
+    }
+
+    <!-- Call to Action -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-6">
+        ¿Preferís escribirnos por WhatsApp? ¡Hacé click en el botón verde que está abajo a la derecha! 💚
+      </p>
+    </div>
+  </div>
+</section>

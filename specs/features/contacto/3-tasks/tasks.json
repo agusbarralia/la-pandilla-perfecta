@@ -1,0 +1,198 @@
+{
+  "feature": "contacto",
+  "stats": {
+    "total": 8,
+    "done": 0
+  },
+  "tasks": [
+    {
+      "id": "CONTACTO-001",
+      "title": "Actualizar config con datos de contacto",
+      "description": "Agregar phone, phoneRaw, whatsapp y whatsappMessage a CONTACT_INFO en src/lib/config.ts",
+      "status": "pending",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: phone = '+54 11 5693-6377'",
+        "AC-2: phoneRaw = '541156936377'",
+        "AC-3: whatsapp = '541156936377'",
+        "AC-4: whatsappMessage configurado",
+        "GATE: TypeScript compila sin errores"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "CONTACTO-002",
+      "title": "Crear componente WhatsAppButton.astro",
+      "description": "Crear botón flotante de WhatsApp con fixed position, circular, verde #25D366, hover effects, WhatsApp SVG icon",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "CONTACTO-001"
+      ],
+      "files": [
+        "src/components/WhatsAppButton.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Fixed position bottom-right",
+        "AC-2: z-index 1000",
+        "AC-3: Link a wa.me con número y mensaje",
+        "AC-4: SVG icon WhatsApp incluido",
+        "AC-5: Hover scale y shadow",
+        "AC-6: Responsive (56px mobile, 60px desktop)",
+        "AC-7: aria-label y accesibilidad",
+        "GATE: Build succeeds"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC",
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "CONTACTO-003",
+      "title": "Crear componente Contacto.astro",
+      "description": "Crear sección de contacto con teléfono, WhatsApp, email, redes sociales, horarios. Layout centrado con iconos.",
+      "status": "pending",
+      "layer": 2,
+      "depends_on": [
+        "CONTACTO-001"
+      ],
+      "files": [
+        "src/components/Contacto.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Sección con id='contacto'",
+        "AC-2: Todos los métodos de contacto visibles",
+        "AC-3: Links clickeables (tel:, mailto:, wa.me)",
+        "AC-4: Iconos para cada método",
+        "AC-5: Horarios de atención mostrados",
+        "AC-6: Links a redes sociales",
+        "AC-7: Responsive design",
+        "GATE: Build succeeds"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC",
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "CONTACTO-004",
+      "title": "Integrar WhatsAppButton en BaseLayout",
+      "description": "Agregar <WhatsAppButton /> en BaseLayout.astro para que aparezca en todas las páginas",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "CONTACTO-002"
+      ],
+      "files": [
+        "src/layouts/BaseLayout.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Import agregado",
+        "AC-2: Componente agregado antes de </body>",
+        "AC-3: Botón visible en todas las páginas",
+        "GATE: Dev server muestra botón flotante"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "CONTACTO-005",
+      "title": "Integrar Contacto en index.astro",
+      "description": "Agregar <Contacto /> en index.astro después de Ubicacion, antes de Footer",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "CONTACTO-003"
+      ],
+      "files": [
+        "src/pages/index.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Import agregado",
+        "AC-2: Componente agregado en orden correcto",
+        "AC-3: Sección visible en la página",
+        "GATE: Dev server muestra sección"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "CONTACTO-006",
+      "title": "Actualizar Header con link a Contacto",
+      "description": "Agregar { label: 'Contacto', href: '#contacto' } a NAV_ITEMS en config.ts",
+      "status": "pending",
+      "layer": 3,
+      "depends_on": [
+        "CONTACTO-005"
+      ],
+      "files": [
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Link agregado a NAV_ITEMS",
+        "AC-2: Link visible en header",
+        "AC-3: Smooth scroll funciona",
+        "GATE: Navegación funciona correctamente"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC"
+      ]
+    },
+    {
+      "id": "CONTACTO-007",
+      "title": "Verificar funcionalidad de links",
+      "description": "Probar que todos los links de contacto funcionan: tel:, mailto:, wa.me, redes sociales",
+      "status": "pending",
+      "layer": 4,
+      "depends_on": [
+        "CONTACTO-004",
+        "CONTACTO-005",
+        "CONTACTO-006"
+      ],
+      "files": [],
+      "acceptance_criteria": [
+        "AC-1: Link tel: abre marcador en mobile",
+        "AC-2: Link mailto: abre cliente de email",
+        "AC-3: Links wa.me abren WhatsApp correctamente",
+        "AC-4: Botón flotante WhatsApp funciona",
+        "AC-5: Links redes sociales abren en nueva pestaña",
+        "GATE: Todos los links funcionales"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC"
+      ]
+    },
+    {
+      "id": "CONTACTO-008",
+      "title": "Verificar responsive y accesibilidad",
+      "description": "Verificar responsive design, z-index del botón flotante, accesibilidad completa",
+      "status": "pending",
+      "layer": 4,
+      "depends_on": [
+        "CONTACTO-007"
+      ],
+      "files": [],
+      "acceptance_criteria": [
+        "AC-1: Responsive funciona en mobile/tablet/desktop",
+        "AC-2: Botón flotante siempre visible",
+        "AC-3: Botón no tapa contenido importante",
+        "AC-4: z-index correcto",
+        "AC-5: Accesibilidad: aria-labels, semantic HTML",
+        "AC-6: Hover states funcionan",
+        "GATE: Todos los success criteria cumplidos"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC",
+        "META"
+      ]
+    }
+  ]
+}

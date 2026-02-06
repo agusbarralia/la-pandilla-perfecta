@@ -1,0 +1,98 @@
+---
+import { CONTACT_INFO } from '../lib/config';
+
+const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent(CONTACT_INFO.whatsappMessage)}`;
+---
+
+<a
+  href={whatsappUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-float"
+  aria-label="Abrir chat de WhatsApp"
+  title="¿Tenés alguna consulta? ¡Escribinos!"
+>
+  <!-- WhatsApp SVG Icon -->
+  <svg
+    width="32"
+    height="32"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+  >
+    <path
+      d="M16 0C7.164 0 0 7.164 0 16c0 2.825.738 5.477 2.034 7.778L0 32l8.444-2.004A15.923 15.923 0 0016 32c8.836 0 16-7.164 16-16S24.836 0 16 0zm0 29.334A13.272 13.272 0 018.89 27.11l-.478-.285-4.956 1.177 1.199-4.76-.314-.497A13.204 13.204 0 012.666 16c0-7.364 5.97-13.334 13.334-13.334S29.334 8.636 29.334 16 23.364 29.334 16 29.334z"
+      fill="white"
+    />
+    <path
+      d="M12.073 9.38c-.276-.616-.567-.628-.83-.64-.215-.01-.461-.01-.707-.01s-.646.092-.984.461c-.338.37-1.291 1.26-1.291 3.074s1.322 3.565 1.506 3.811c.184.246 2.598 3.966 6.292 5.563.88.379 1.567.606 2.102.775.883.28 1.686.24 2.321.146.708-.106 2.18-.892 2.487-1.753.307-.861.307-1.6.215-1.753-.092-.153-.338-.245-.707-.43-.369-.184-2.18-1.075-2.518-1.198-.338-.123-.584-.184-.83.185-.246.369-.953 1.198-1.169 1.445-.215.246-.43.277-.799.092-.369-.184-1.557-.574-2.966-1.83-1.096-.978-1.836-2.187-2.051-2.556-.215-.369-.023-.568.162-.752.166-.166.369-.43.553-.645.184-.215.246-.369.369-.615.123-.246.061-.461-.031-.645-.092-.185-.83-2-1.138-2.738z"
+      fill="white"
+    />
+  </svg>
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    background: #128C7E;
+  }
+
+  .whatsapp-float:active {
+    transform: scale(1.05);
+  }
+
+  /* Responsive: smaller on mobile */
+  @media (max-width: 768px) {
+    .whatsapp-float {
+      width: 56px;
+      height: 56px;
+      bottom: 16px;
+      right: 16px;
+    }
+
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  /* Optional: subtle pulse animation */
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+
+  .whatsapp-float {
+    animation: pulse 2s infinite;
+  }
+
+  .whatsapp-float:hover {
+    animation: none;
+  }
+</style>
