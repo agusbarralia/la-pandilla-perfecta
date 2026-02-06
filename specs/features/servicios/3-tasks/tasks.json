@@ -1,0 +1,114 @@
+{
+  "feature": "servicios",
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Add SERVICES constant to config.ts",
+      "description": "Add array of services with id, icon, title, description to src/lib/config.ts",
+      "layer": 1,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "SERVICES array exported from config.ts",
+        "6 services defined (alimentos, peluqueria, lavado, accesorios, higiene, asesoria)",
+        "Each service has: id, icon (emoji), title, description",
+        "Descriptions are in Spanish",
+        "File compiles without errors"
+      ],
+      "files_touched": [
+        "src/lib/config.ts"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Create ServiceCard.astro component",
+      "description": "Create reusable card component for displaying individual services with icon, title, and description.",
+      "layer": 2,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Component created at src/components/ServiceCard.astro",
+        "Props interface defined (icon, title, description)",
+        "Card has white background with border and shadow",
+        "Hover effect implemented (shadow-lg, scale)",
+        "Text centered and properly styled",
+        "Responsive padding"
+      ],
+      "files_touched": [
+        "src/components/ServiceCard.astro"
+      ],
+      "dependencies": ["TASK-001"]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Create Services.astro section component",
+      "description": "Create main services section that renders grid of ServiceCard components using data from config.",
+      "layer": 3,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Component created at src/components/Services.astro",
+        "Imports SERVICES from config.ts",
+        "Renders section with heading and subtitle",
+        "Grid layout responsive (1→2→3 cols)",
+        "Maps over SERVICES array to render ServiceCard components",
+        "Section has id='servicios' for anchor linking",
+        "Background color (gray-50) differentiates from hero"
+      ],
+      "files_touched": [
+        "src/components/Services.astro"
+      ],
+      "dependencies": ["TASK-002"]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Integrate Services into homepage",
+      "description": "Import and render Services component in index.astro below Hero section.",
+      "layer": 4,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Services imported in src/pages/index.astro",
+        "Services rendered after Hero component",
+        "Page renders correctly",
+        "No layout issues or overlaps"
+      ],
+      "files_touched": [
+        "src/pages/index.astro"
+      ],
+      "dependencies": ["TASK-003"]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Verify build and responsive design",
+      "description": "Run production build and test services section on multiple screen sizes.",
+      "layer": 5,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "npm run build succeeds without errors",
+        "Services section visible on homepage",
+        "Grid responsive: 1 col (mobile), 2 cols (tablet), 3 cols (desktop)",
+        "All 6 service cards render correctly",
+        "Hover effects work on desktop",
+        "Text readable on all devices",
+        "No horizontal scroll on mobile",
+        "Section properly spaced from hero"
+      ],
+      "files_touched": [
+        "dist/"
+      ],
+      "dependencies": ["TASK-004"]
+    }
+  ],
+  "metadata": {
+    "total_tasks": 5,
+    "completed_tasks": 5,
+    "estimated_hours": 3,
+    "actual_hours": 1.5,
+    "created_at": "2026-02-05",
+    "last_updated": "2026-02-05",
+    "completed_at": "2026-02-05"
+  }
+}

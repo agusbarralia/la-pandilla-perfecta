@@ -10,7 +10,7 @@ Central list of pending work. Priorities: **P0** (critical/MVP), **P1** (importa
 
 - [x] **Project setup** - Inicializar proyecto con stack elegido (framework, styling, linter, estructura de carpetas) ✅
 - [x] **Hero section** - Sección principal con nombre del negocio, tagline e imagen destacada ✅
-- [ ] **Servicios** - Sección listando servicios ofrecidos (venta de productos, peluquería, lavado, etc.)
+- [x] **Servicios** - Sección listando servicios ofrecidos (venta de productos, peluquería, lavado, etc.) ✅
 - [ ] **Marcas** - Sección mostrando marcas de alimento/productos con las que trabajan
 - [ ] **Ubicación** - Dirección del local con mapa embebido (Google Maps)
 - [ ] **Contacto** - Info de contacto: teléfono, WhatsApp, redes sociales, horarios de atención

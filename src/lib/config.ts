@@ -35,3 +35,45 @@ export const CONTACT_INFO = {
     sunday: 'Domingo: Cerrado',
   },
 };
+
+export const SERVICES = [
+  {
+    id: 'alimentos',
+    icon: '🍖',
+    title: 'Venta de Alimentos',
+    description:
+      'Alimento balanceado de las mejores marcas para perros y gatos de todas las edades',
+  },
+  {
+    id: 'peluqueria',
+    icon: '✂️',
+    title: 'Peluquería Canina',
+    description:
+      'Cortes de pelo, baños medicinales y estéticos para que tu mascota luzca espectacular',
+  },
+  {
+    id: 'lavado',
+    icon: '🛁',
+    title: 'Lavado y Baño',
+    description: 'Servicio de baño completo con productos de calidad y secado profesional',
+  },
+  {
+    id: 'accesorios',
+    icon: '🎾',
+    title: 'Accesorios',
+    description:
+      'Collares, correas, juguetes, camas y todo lo necesario para el bienestar de tu mascota',
+  },
+  {
+    id: 'higiene',
+    icon: '🧴',
+    title: 'Productos de Higiene',
+    description: 'Shampoos, antipulgas, desparasitarios y productos para el cuidado diario',
+  },
+  {
+    id: 'asesoria',
+    icon: '💬',
+    title: 'Asesoramiento',
+    description: 'Consultas sobre alimentación, cuidados y bienestar de tu mascota',
+  },
+];
