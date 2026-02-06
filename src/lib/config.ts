@@ -59,8 +59,8 @@ export const CONTACT_INFO = {
     fullAddress: 'Yerbal 547, Ciudad Autónoma de Buenos Aires, CABA',
   },
   social: {
-    instagram: '',
-    facebook: '',
+    instagram: 'https://www.instagram.com/lapandillaperfecta',
+    facebook: 'https://www.facebook.com/lapandillaperfecta',
   },
   hours: {
     weekdays: 'Lunes a Viernes: 9:00 - 19:00',
