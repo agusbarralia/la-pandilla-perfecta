@@ -14,7 +14,7 @@ Central list of pending work. Priorities: **P0** (critical/MVP), **P1** (importa
 - [x] **Marcas** - Sección mostrando marcas de alimento/productos con las que trabajan ✅
 - [x] **Header/Nav** - Navegación principal con links a cada sección + logo ✅
 - [x] **Footer** - Pie de página con info resumida, links y copyright ✅
-- [ ] **Ubicación** - Dirección del local con mapa embebido (Google Maps)
+- [x] **Ubicación** - Dirección del local con mapa embebido (Google Maps) ✅
 - [ ] **Contacto** - Info de contacto: teléfono, WhatsApp, redes sociales, horarios de atención
 - [ ] **Responsive design** - Asegurar que toda la página funcione correctamente en mobile/tablet/desktop
 - [ ] **SEO básico** - Meta tags, Open Graph, favicon, structured data para negocio local

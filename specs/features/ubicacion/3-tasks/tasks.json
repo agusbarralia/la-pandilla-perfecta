@@ -1,0 +1,161 @@
+{
+  "feature": "ubicacion",
+  "stats": {
+    "total": 7,
+    "done": 7
+  },
+  "tasks": [
+    {
+      "id": "UBICACION-001",
+      "title": "Actualizar config con dirección",
+      "description": "Agregar address object a CONTACT_INFO en src/lib/config.ts con la dirección Yerbal 547, CABA",
+      "status": "done",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: address.street = 'Yerbal 547'",
+        "AC-2: address.city = 'Ciudad Autónoma de Buenos Aires'",
+        "AC-3: address.province = 'CABA'",
+        "AC-4: address.fullAddress está completo",
+        "GATE: TypeScript compila sin errores"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "UBICACION-002",
+      "title": "Obtener Google Maps embed URL",
+      "description": "Ir a Google Maps, buscar 'Yerbal 547, CABA', obtener iframe embed code desde 'Compartir > Insertar mapa'",
+      "status": "done",
+      "layer": 1,
+      "depends_on": [],
+      "files": [],
+      "acceptance_criteria": [
+        "AC-1: URL de embed obtenida de Google Maps",
+        "AC-2: URL apunta a la ubicación correcta",
+        "AC-3: URL es del formato https://www.google.com/maps/embed?pb=..."
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "UBICACION-003",
+      "title": "Verificar/agregar estilos btn-primary",
+      "description": "Verificar si .btn-primary existe en src/styles/global.css, agregarlo si es necesario",
+      "status": "done",
+      "layer": 1,
+      "depends_on": [],
+      "files": [
+        "src/styles/global.css"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Clase .btn-primary existe",
+        "AC-2: Estilos incluyen bg-primary, hover, focus states",
+        "AC-3: Responsive y accesible"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "UBICACION-004",
+      "title": "Crear componente Ubicacion.astro",
+      "description": "Crear src/components/Ubicacion.astro con grid responsive (texto + mapa), dirección, CTA button, iframe embebido",
+      "status": "done",
+      "layer": 2,
+      "depends_on": [
+        "UBICACION-001",
+        "UBICACION-002",
+        "UBICACION-003"
+      ],
+      "files": [
+        "src/components/Ubicacion.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Componente renderiza con id='ubicacion'",
+        "AC-2: Grid 2 columnas desktop, stack mobile",
+        "AC-3: Mapa embebido con loading='lazy'",
+        "AC-4: CTA button con rel='noopener noreferrer'",
+        "AC-5: Semantic HTML (section, address, etc.)",
+        "GATE: Build succeeds"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC",
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "UBICACION-005",
+      "title": "Integrar componente en index.astro",
+      "description": "Importar y agregar <Ubicacion /> en src/pages/index.astro después de Marcas, antes de Footer",
+      "status": "done",
+      "layer": 3,
+      "depends_on": [
+        "UBICACION-004"
+      ],
+      "files": [
+        "src/pages/index.astro"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Import agregado",
+        "AC-2: Componente agregado en orden correcto",
+        "AC-3: Sección visible en la página",
+        "GATE: Dev server muestra sección correctamente"
+      ],
+      "references": [
+        "TECH-DESIGN"
+      ]
+    },
+    {
+      "id": "UBICACION-006",
+      "title": "Actualizar Header con link",
+      "description": "Agregar { label: 'Ubicación', href: '#ubicacion' } a NAV_ITEMS en src/lib/config.ts",
+      "status": "done",
+      "layer": 3,
+      "depends_on": [
+        "UBICACION-005"
+      ],
+      "files": [
+        "src/lib/config.ts"
+      ],
+      "acceptance_criteria": [
+        "AC-1: Link agregado a NAV_ITEMS",
+        "AC-2: Link visible en header",
+        "AC-3: Smooth scroll funciona al hacer click",
+        "GATE: Navegación funciona correctamente"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC"
+      ]
+    },
+    {
+      "id": "UBICACION-007",
+      "title": "Verificar y testear",
+      "description": "Verificar responsive design (mobile/tablet/desktop), accesibilidad, y funcionalidad completa",
+      "status": "done",
+      "layer": 4,
+      "depends_on": [
+        "UBICACION-006"
+      ],
+      "files": [],
+      "acceptance_criteria": [
+        "AC-1: Responsive funciona en mobile (320px+), tablet (768px+), desktop (1024px+)",
+        "AC-2: Mapa carga correctamente con lazy loading",
+        "AC-3: CTA abre Google Maps en nueva pestaña",
+        "AC-4: Navegación desde header scrollea correctamente",
+        "AC-5: Semantic HTML y atributos de accesibilidad correctos",
+        "AC-6: No layout shifts",
+        "GATE: Todos los success criteria del meta.md cumplidos"
+      ],
+      "references": [
+        "FUNCTIONAL-SPEC",
+        "META"
+      ]
+    }
+  ]
+}

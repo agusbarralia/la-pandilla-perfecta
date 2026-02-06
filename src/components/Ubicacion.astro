@@ -1,0 +1,81 @@
+---
+import { CONTACT_INFO } from '../lib/config';
+
+// Generate Google Maps URLs
+const mapsSearchUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.address.fullAddress)}`;
+const mapsEmbedUrl = `https://maps.google.com/maps?q=${encodeURIComponent(CONTACT_INFO.address.fullAddress)}&output=embed`;
+---
+
+<section id="ubicacion" class="py-16 md:py-24 bg-white" aria-label="Ubicación">
+  <div class="max-w-7xl mx-auto px-4 md:px-8">
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        🐾 Visitanos
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Te esperamos en nuestro local para brindarte la mejor atención a vos y tu mascota
+      </p>
+    </div>
+
+    <!-- Grid: 2 columns desktop, stack mobile -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <!-- Left: Text Content -->
+      <div class="flex flex-col justify-center space-y-6">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span class="text-2xl">📍</span>
+            <span>Nuestra Ubicación</span>
+          </h3>
+          <address class="not-italic text-gray-700 space-y-2">
+            <p class="text-lg font-medium">{CONTACT_INFO.address.street}</p>
+            <p class="text-lg">{CONTACT_INFO.address.city}</p>
+            <p class="text-lg">{CONTACT_INFO.address.province}, {CONTACT_INFO.address.country}</p>
+          </address>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+            <span class="text-xl">🕐</span>
+            <span>Horarios de Atención</span>
+          </h4>
+          <div class="text-gray-700 space-y-1">
+            <p>{CONTACT_INFO.hours.weekdays}</p>
+            <p>{CONTACT_INFO.hours.saturday}</p>
+            <p>{CONTACT_INFO.hours.sunday}</p>
+          </div>
+        </div>
+
+        <div>
+          <a
+            href={mapsSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary inline-flex items-center gap-2"
+            aria-label="Abrir ubicación en Google Maps"
+          >
+            <span>🗺️</span>
+            <span>Cómo llegar</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Map -->
+      <div class="w-full">
+        <div class="relative w-full h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src={mapsEmbedUrl}
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de La Pandilla Perfecta en el mapa"
+            class="absolute inset-0"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

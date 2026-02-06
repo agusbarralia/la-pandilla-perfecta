@@ -3,6 +3,7 @@
 @theme {
   /* Brand Colors */
   --color-primary: #27917b;
+  --color-primary-dark: #1f7162;
   --color-secondary: #957659;
 
   /* Extend Tailwind's default colors */
@@ -24,4 +25,31 @@ body {
   body {
     padding-top: 5rem; /* 80px - height of header on desktop */
   }
+}
+
+/* Button styles */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(39, 145, 123, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
