@@ -1,0 +1,130 @@
+{
+  "feature": "hero-section",
+  "tasks": [
+    {
+      "id": "TASK-001",
+      "title": "Download and optimize hero placeholder image",
+      "description": "Download high-quality pet/dog image from Unsplash and save to src/assets/images/. Let Astro handle optimization.",
+      "layer": 1,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Image downloaded to src/assets/images/hero-placeholder.jpg",
+        "Image is high resolution (min 1920x1080)",
+        "Image depicts happy pets or pet shop environment",
+        "Image license allows commercial use (Unsplash license)"
+      ],
+      "files_touched": [
+        "src/assets/images/hero-placeholder.jpg"
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "TASK-002",
+      "title": "Create Hero.astro component with basic structure",
+      "description": "Create Hero component with props interface, section wrapper, and placeholder content. No styling yet, just structure.",
+      "layer": 2,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Component created at src/components/Hero.astro",
+        "Props interface defined (title, slogan, ctaText, ctaLink, imageUrl, imageAlt)",
+        "Default props from SITE_CONFIG",
+        "Semantic HTML (section, h1, p, a)",
+        "Component exports properly"
+      ],
+      "files_touched": [
+        "src/components/Hero.astro"
+      ],
+      "dependencies": ["TASK-001"]
+    },
+    {
+      "id": "TASK-003",
+      "title": "Implement responsive design and Tailwind styles",
+      "description": "Add Tailwind classes for layout, typography, colors, and responsive breakpoints. Include background image with overlay.",
+      "layer": 3,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Background image displayed with overlay gradient",
+        "Text hierarchy clear (h1 > p > button)",
+        "Brand colors applied (primary #27917B)",
+        "Responsive classes for mobile/tablet/desktop",
+        "min-h-screen on mobile, h-[80vh] on desktop",
+        "Text contrast sufficient (overlay ensures readability)"
+      ],
+      "files_touched": [
+        "src/components/Hero.astro"
+      ],
+      "dependencies": ["TASK-002"]
+    },
+    {
+      "id": "TASK-004",
+      "title": "Implement CTA button with styles and accessibility",
+      "description": "Style CTA button with brand colors, hover effects, focus states, and proper accessibility attributes.",
+      "layer": 3,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Button uses primary color background",
+        "Hover effect implemented (darker shade or opacity)",
+        "Focus ring visible for keyboard navigation",
+        "Transition smooth (duration-200)",
+        "Button is keyboard accessible",
+        "Proper link behavior (scroll to #contacto or WhatsApp)"
+      ],
+      "files_touched": [
+        "src/components/Hero.astro"
+      ],
+      "dependencies": ["TASK-002"]
+    },
+    {
+      "id": "TASK-005",
+      "title": "Integrate Hero component into index.astro",
+      "description": "Import and render Hero component in homepage, replacing temporary test content.",
+      "layer": 4,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "Hero imported in src/pages/index.astro",
+        "Hero rendered as first section in BaseLayout",
+        "Test content removed (gradient test div)",
+        "Page still renders correctly"
+      ],
+      "files_touched": [
+        "src/pages/index.astro"
+      ],
+      "dependencies": ["TASK-003", "TASK-004"]
+    },
+    {
+      "id": "TASK-006",
+      "title": "Verify build and test accessibility",
+      "description": "Run production build, test on multiple devices/browsers, verify Lighthouse score and accessibility.",
+      "layer": 5,
+      "status": "done",
+      "assignee": "claude",
+      "acceptance_criteria": [
+        "npm run build succeeds without errors",
+        "Hero visible on all screen sizes (mobile, tablet, desktop)",
+        "Lighthouse score > 90 (performance, accessibility, SEO)",
+        "Contrast ratio meets WCAG AA (4.5:1 minimum)",
+        "Keyboard navigation works (tab to CTA, enter to activate)",
+        "Alt text present on hero image",
+        "Semantic HTML verified (h1, section, etc.)"
+      ],
+      "files_touched": [
+        "dist/"
+      ],
+      "dependencies": ["TASK-005"]
+    }
+  ],
+  "metadata": {
+    "total_tasks": 6,
+    "completed_tasks": 6,
+    "estimated_hours": 4,
+    "actual_hours": 2,
+    "created_at": "2026-02-05",
+    "last_updated": "2026-02-05",
+    "completed_at": "2026-02-05"
+  }
+}
