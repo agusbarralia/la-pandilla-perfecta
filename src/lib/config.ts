@@ -5,6 +5,8 @@ import golocanLogo from '../assets/images/brands/golocan.png';
 import unikLogo from '../assets/images/brands/unik.png';
 import vitalcanLogo from '../assets/images/brands/vitalcan.png';
 import proPlanLogo from '../assets/images/brands/pro-plan.png';
+import oldprinceLogo from '../assets/images/brands/old-prince.png';
+import performanceLogo from '../assets/images/brands/performance.png';
 
 // Gallery images
 import galleryImage1 from '../assets/images/andrew-s-ouo1hbizWwo-unsplash.jpg';
@@ -48,7 +50,7 @@ export const DESIGN_TOKENS = {
 export const CONTACT_INFO = {
   phone: '+54 11 5693-6377',
   phoneRaw: '541156936377', // For tel: links and WhatsApp
-  email: 'info@lapandillaperfecta.com',
+  email: 'lapandillaperfecta1@gmail.com',
   whatsapp: '541156936377',
   whatsappMessage: 'Hola! Me gustaría consultar sobre...',
   address: {
@@ -82,13 +84,13 @@ export const SERVICES = [
     icon: null,
     title: 'Peluquería Canina',
     description:
-      'Cortes de pelo, baños medicinales y estéticos para que tu mascota luzca espectacular',
+      'Cortes, peinados y baños estéticos o medicinales con productos Derma Pet. Priorizamos el equilibrio entre belleza y salud para tu mascota.',
   },
   {
     id: 'lavado',
     icon: null,
-    title: 'Lavado y Baño',
-    description: 'Servicio de baño completo con productos de calidad y secado profesional',
+    title: 'AutoDog',
+    description: 'Alquilá nuestras instalaciones profesionales de baño y secado para ser el peluquero de tu perro en un espacio cómodo y sin ensuciar tu casa.',
   },
   {
     id: 'accesorios',
@@ -123,9 +125,9 @@ export const BRANDS = [
     logo: royalCaninLogo,
   },
   {
-    id: 'golocan',
-    name: 'Golocan',
-    logo: golocanLogo,
+    id: 'performance',
+    name: 'Performance',
+    logo: performanceLogo,
   },
   {
     id: 'unik',
@@ -138,9 +140,9 @@ export const BRANDS = [
     logo: vitalcanLogo,
   },
   {
-    id: 'pro-plan',
-    name: 'Pro Plan',
-    logo: proPlanLogo,
+    id: 'old-prince',
+    name: 'Old Prince',
+    logo: oldprinceLogo,
   },
 ];
 
@@ -184,9 +186,9 @@ export const GALLERY = [
 ];
 
 export const ABOUT_US = {
-  mission: 'En La Pandilla Perfecta creemos que cada mascota merece lo mejor. Nuestro compromiso es ofrecer productos premium y servicios profesionales para garantizar el bienestar y felicidad de tus peludos.',
-  vision: 'Ser el pet shop de referencia en CABA, reconocido por la calidad, profesionalismo y amor hacia los animales.',
-  whyChooseUs: [
+  mission: 'El equipo de La Pandilla Perfecta tiene como objetivo hacer feliz a cada cliente 🐈 ♥️ brindándole lo mejor de nosotros y de nuestros servicios.',
+  vision: 'Ser el lugar elegido por quienes buscan calidad, confianza y cuidado integral para sus mascotas. Buscamos retribuirles a cada animalito todo el amor que ellos nos dan ♥️',
+  whyChooseUs: [  
     {
       id: 'experience',
       title: 'Experiencia Profesional',

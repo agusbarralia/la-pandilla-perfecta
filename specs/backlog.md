@@ -64,6 +64,10 @@ _(none recorded)_
 - ✅ Gallery section added with pet-themed images (Loremflickr)
 - ✅ Body font changed from Inter to Poppins (more friendly)
 - ✅ Navigation menu updated with Galería link
+- ✅ Gallery images replaced with local fixed assets (6 high-quality pet photos)
+- ✅ Contact section improved (3-column responsive grid + prominent WhatsApp CTA button)
+- ✅ Removed email contact card (not actively used)
+- ✅ Contact section: Teléfono, WhatsApp, Horarios + Redes Sociales + WhatsApp button
 
 ---
 
