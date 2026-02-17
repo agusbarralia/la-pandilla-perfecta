@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import heroImage from '../assets/images/hero-placeholder.jpg';
+import logo from '../assets/images/pandilla-logo.png';
 
 interface Props {
   imageAlt?: string;
@@ -24,44 +25,73 @@ const {
     loading="eager"
   />
 
-  <!-- Overlay Gradient - Stronger for better text contrast -->
+  <!-- Overlay Gradient -->
   <div class="absolute inset-0 bg-gradient-to-br from-primary-dark/85 via-primary/75 to-primary-dark/85"></div>
 
-  <!-- Content - Left-aligned for F-pattern -->
-  <div class="relative z-10 flex items-center h-[60vh] md:h-[70vh] px-4 md:px-8 lg:px-12 max-w-7xl mx-auto">
-    <div class="text-white max-w-2xl">
-      <!-- Location/Category Label -->
-      <p class="text-lg md:text-xl font-semibold mb-3 text-secondary-light tracking-wide">
-        TIENDA DE MASCOTAS
-      </p>
+  <!-- Content -->
+  <div class="relative z-10 flex items-center h-[60vh] md:h-[70vh] px-4 md:px-8 lg:px-12 max-w-7xl mx-auto w-full">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
 
-      <!-- Title -->
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
-        El mejor espacio para <br/>  tu peludo
-      </h1>
+      <!-- Left: Text content -->
+      <div class="text-white">
+        <!-- Logo mobile (sobre el texto en pantallas chicas) -->
+        <div class="mb-5 md:hidden">
+          <Image
+            src={logo}
+            alt="Logo La Pandilla Perfecta"
+            class="h-16 w-auto drop-shadow-lg"
+            loading="eager"
+          />
+        </div>
 
-      <!-- Value Proposition -->
-      <p class="text-xl md:text-2xl mb-10 font-light leading-relaxed max-w-xl opacity-95">
-        Alimento premium, peluquería profesional, accesorios y atención personalizada
-      </p>
+        <!-- Location/Category Label -->
+        <p class="text-lg md:text-xl font-semibold mb-3 text-secondary-light tracking-wide">
+          TIENDA DE MASCOTAS
+        </p>
 
-      <!-- CTA Buttons - Hierarchical -->
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a
-          href="#servicios"
-          class="btn-accent text-center"
-        >
-          Ver Servicios
-        </a>
-        <a
-          href="https://wa.me/5491234567890?text=Hola%20La%20Pandilla%20Perfecta%2C%20quisiera%20consultar%20por%20los%20servicios"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-secondary text-center"
-        >
-          Consultar por WhatsApp
-        </a>
+        <!-- Title -->
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1]">
+          El mejor espacio para <br/>  tu peludo
+        </h1>
+
+        <!-- Value Proposition -->
+        <p class="text-xl md:text-2xl mb-10 font-light leading-relaxed max-w-xl opacity-95">
+          Alimento premium, peluquería profesional, accesorios y atención personalizada
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#servicios"
+            class="btn-accent text-center"
+          >
+            Ver Servicios
+          </a>
+          <a
+            href="https://wa.me/5491234567890?text=Hola%20La%20Pandilla%20Perfecta%2C%20quisiera%20consultar%20por%20los%20servicios"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary text-center"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
       </div>
+
+      <!-- Right: Logo (desktop) -->
+      <div class="hidden md:flex justify-center items-center">
+        <div class="relative">
+          <!-- Soft glow behind logo -->
+          <div class="absolute inset-0 bg-white/15 rounded-full blur-3xl scale-125"></div>
+          <Image
+            src={logo}
+            alt="Logo La Pandilla Perfecta"
+            class="relative h-52 lg:h-72 w-auto drop-shadow-2xl"
+            loading="eager"
+          />
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
