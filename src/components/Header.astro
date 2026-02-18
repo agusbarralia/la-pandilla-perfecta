@@ -61,10 +61,18 @@ const { navItems = NAV_ITEMS } = Astro.props;
     </div>
   </div>
 
+  <!-- Mobile Menu Backdrop -->
+  <div
+    id="mobile-menu-backdrop"
+    class="fixed inset-0 bg-black/30 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    aria-hidden="true"
+  >
+  </div>
+
   <!-- Mobile Menu Overlay -->
   <nav
     id="mobile-menu"
-    class="fixed inset-y-0 right-0 w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    class="fixed inset-y-0 right-0 z-10 w-64 bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
     aria-label="Menú de navegación móvil"
   >
     <div class="flex flex-col h-full">
@@ -99,14 +107,6 @@ const { navItems = NAV_ITEMS } = Astro.props;
       </ul>
     </div>
   </nav>
-
-  <!-- Mobile Menu Backdrop -->
-  <div
-    id="mobile-menu-backdrop"
-    class="fixed inset-0 bg-black/20 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
-    aria-hidden="true"
-  >
-  </div>
 </header>
 
 <script>
