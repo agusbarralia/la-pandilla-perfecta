@@ -48,10 +48,10 @@ export const DESIGN_TOKENS = {
 };
 
 export const CONTACT_INFO = {
-  phone: '+54 11 5693-6377',
-  phoneRaw: '541156936377', // For tel: links and WhatsApp
+  phone: 'xxx-xxx-xxx',
+  phoneRaw: 'xxx-xxx-xxx', // For tel: links and WhatsApp
   email: 'lapandillaperfecta1@gmail.com',
-  whatsapp: '541156936377',
+  whatsapp: 'xxx-xxx-xxx',
   whatsappMessage: 'Hola! Me gustaría consultar sobre...',
   address: {
     street: 'Yerbal 547',
